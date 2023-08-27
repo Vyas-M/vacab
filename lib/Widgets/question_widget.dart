@@ -6,11 +6,16 @@ import '../models/question.dart';
 class QuestionWidget extends StatelessWidget {
   final Question currentQuestion;
 
-  QuestionWidget({Key? key, required this.currentQuestion}) : super(key: key);
+  final Function(String a, String b) calculateScore;
+  QuestionWidget({Key? key, required this.currentQuestion, required this.calculateScore}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     //Uri url = Uri(currentQuestion.imageLocation);
+    List<String> tempOptions = List.from(currentQuestion.options);
+    tempOptions.shuffle();
+    //List<String> presentOptions = tempOptions.shuffle();
     return Container(
         color: Color(0xFFA49292),
         child: Column(
@@ -24,12 +29,16 @@ class QuestionWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 QuestionButtonWidget(
-                    buttonText: currentQuestion.options.elementAt(0),
-                    buttonFunction: () {}),
+                    buttonText: tempOptions[0],
+                    buttonFunction: () {
+                      calculateScore(tempOptions[0], currentQuestion.correctAnswer);
+                    }),
                 SizedBox(width: 10,),
                 QuestionButtonWidget(
-                    buttonText: currentQuestion.options.elementAt(1),
-                    buttonFunction: () {}),
+                    buttonText: tempOptions[1],
+                    buttonFunction: () {
+                      calculateScore(tempOptions[1], currentQuestion.correctAnswer);
+                    }),
               ],
             ),
             SizedBox(
@@ -39,14 +48,18 @@ class QuestionWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 QuestionButtonWidget(
-                    buttonText: currentQuestion.options.elementAt(2),
-                    buttonFunction: () {}),
+                    buttonText: tempOptions[2],
+                    buttonFunction: () {
+                      calculateScore(tempOptions[2], currentQuestion.correctAnswer);
+                    }),
                 SizedBox(
                   width: 10,
                 ),
                 QuestionButtonWidget(
-                    buttonText: currentQuestion.options.elementAt(3),
-                    buttonFunction: () {}),
+                    buttonText: tempOptions[3],
+                    buttonFunction: () {
+                      calculateScore(tempOptions[3], currentQuestion.correctAnswer);
+                    }),
               ],
             ),
 
