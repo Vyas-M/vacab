@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vacab/Screens/landing_screen.dart';
 import 'package:vacab/Screens/question_screen.dart';
+import 'package:vacab/Screens/results_screen.dart';
 import 'package:vacab/Screens/select_questions.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => LandingScreen(),
         '/question_select': (context) => SelectQuestionsScreen(),
         '/questions_screen': (context) => QuestionScreen(),
+        '/results_screen': (context) => ResultsScreen(),
       },
     );
 

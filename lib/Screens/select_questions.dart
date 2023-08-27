@@ -19,7 +19,7 @@ class _SelectQuestionsScreenState extends State<SelectQuestionsScreen> {
   void setTotalQuestions(int n){
     print("Inside the function");
     numberOfQuestions = n;
-    Navigator.pushNamed(context, '/questions_screen');
+    Navigator.pushNamed(context, '/questions_screen', arguments: numberOfQuestions);
   }
 
   @override
@@ -45,14 +45,14 @@ class _SelectQuestionsScreenState extends State<SelectQuestionsScreen> {
                     children: [
                       QuestionButtonWidget(
                           buttonText: "10", buttonFunction: () {
-                            setTotalQuestions(10);
+                            setTotalQuestions(4);
                       },),
                       SizedBox(
                         width: 20,
                       ),
                       QuestionButtonWidget(
                           buttonText: "15", buttonFunction: () {
-                        setTotalQuestions(15);
+                        setTotalQuestions(6);
                       },),
                     ],
                   ),
@@ -64,14 +64,14 @@ class _SelectQuestionsScreenState extends State<SelectQuestionsScreen> {
                     children: [
                       QuestionButtonWidget(
                           buttonText: "20", buttonFunction: () {
-                        setTotalQuestions(20);
+                        setTotalQuestions(8);
                       },),
                       SizedBox(
                         width: 20,
                       ),
                       QuestionButtonWidget(
                           buttonText: "25", buttonFunction: () {
-                        setTotalQuestions(25);
+                        setTotalQuestions(10);
                       },),
                     ],
                   ),
