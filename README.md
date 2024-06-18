@@ -1,7 +1,6 @@
 # vacab
 
-A simple flutter quiz application to test the vacabloury for GRE exam
-
+A simple flutter quiz application to to increase the vocabulary of the user.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
